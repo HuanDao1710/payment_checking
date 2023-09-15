@@ -23,7 +23,7 @@ public class TransactionEntity extends BaseEntity{
 	private long accountId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "package_id" , referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "package_id" , referencedColumnName = "package_id", nullable = false)
 	private PackageEntity packageOrder;
 
 	@Column(name = "expired_time", nullable = false)

@@ -13,17 +13,19 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class PackageEntity extends BaseEntity{
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(name = "package_id")
+	private String packageId;
 
 	@Column(name = "duration", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Duration duration;
 
 	@ManyToOne
-	@JoinColumn(name = "app_id", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "app_id", referencedColumnName = "app_id", nullable = false)
 	private AppInfoEntity appInfo;
 
 	@OneToMany(mappedBy = "packageOrder")

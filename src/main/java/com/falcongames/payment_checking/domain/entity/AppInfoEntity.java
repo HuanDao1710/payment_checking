@@ -17,7 +17,10 @@ import java.util.List;
 public class AppInfoEntity extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
+
+	@Column(name = "app_id")
+	private String appId;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "appInfo")
 	private List<PackageEntity> packages;
