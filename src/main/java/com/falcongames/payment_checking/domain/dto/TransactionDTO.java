@@ -13,8 +13,6 @@ public class TransactionDTO {
 private String accountId;
 
 @NotNull(groups = {Create.class})
-private Long packageId;
-
-
+private String packageId;
 
 }
